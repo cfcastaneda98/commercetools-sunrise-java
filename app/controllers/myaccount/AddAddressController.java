@@ -29,9 +29,12 @@ import java.util.concurrent.CompletionStage;
         PageHeaderControllerComponentSupplier.class,
         CustomerOperationsControllerComponentSupplier.class
 })
+//Fixed Code Style Issue: Long Variable
+//Modified the name to be less than 17 characters long.
 public final class AddAddressController extends SunriseAddAddressController {
 
-    private final AuthenticationReverseRouter authenticationReverseRouter;
+    //private final AuthenticationReverseRouter authenticationReverseRouter;
+    private final AuthenticationReverseRouter authenRevRouter;
     private final AddressBookReverseRouter addressBookReverseRouter;
 
     @Inject
