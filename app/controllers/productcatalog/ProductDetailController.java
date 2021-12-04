@@ -59,10 +59,12 @@ public final class ProductDetailController extends SunriseProductDetailControlle
     }
 
     @Override
+    //Fixed Design Issue: Law of Demeter
+    //Removed coupling calls to just one
     public CompletionStage<Result> handleNotFoundProductVariant(final ProductProjection product) {
         return productReverseRouter
                 .productDetailPageCall(product, product.getMasterVariant())
-                .map(this::redirectToCall)
-                .orElseGet(() -> completedFuture(notFound()));
+                //.map(this::redirectToCall)
+                //.orElseGet(() -> completedFuture(notFound()));
     }
 }
